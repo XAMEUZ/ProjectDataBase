@@ -51,7 +51,7 @@ function ubah ($data) {
     $gambar = htmlspecialchars($data["gambar"]);
 
     $query = "UPDATE mahasiswa SET
-               nrp = '$nrp',
+               id = '$id',
                name = '$name',
                username = '$username',
                password = '$password'
@@ -62,3 +62,10 @@ function ubah ($data) {
 
     return mysqli_affected_rows($conn);
     }
+    
+function hapus ($id) {
+    global $conn;
+    mysqli_query($conn, "DELETE FROM mahasiswa WHERE id
+
+     return mysqli_affected_rows($conn);
+}
