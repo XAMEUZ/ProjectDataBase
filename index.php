@@ -29,9 +29,10 @@ $mahasiswa = query("SELECT FROM mahasiswa");
 
         <?php $i = 1; ?>
         <?php foreach ($mahasiswa as $row): ?>
-        <tr>
+        <tr>  
             <td><?= $i; ?></td>
             <td>
+        
                 <a href="update.php?id=<?= $row["id"]; ?>">update</a> |
                 <a href="delete.php?id=<?= $row["id"]; ?>" onclick="
                     return confirm('yakin?');">delete</a>
