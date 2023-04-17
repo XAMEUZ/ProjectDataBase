@@ -13,6 +13,6 @@ if( hapus ($id) > 0) {
 } else {
     echo "
         <script>
-            alert('Data berhasil dihapus!'); 
+            alert('Data gagal dihapus!'); 
             document.location.href = 'index.php';
          </script>
