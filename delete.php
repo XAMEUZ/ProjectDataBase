@@ -16,3 +16,5 @@ if( hapus ($id) > 0) {
             alert('Data gagal dihapus!'); 
             document.location.href = 'index.php';
          </script>
+         ";
+}
