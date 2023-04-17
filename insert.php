@@ -14,7 +14,6 @@ if ( isset ($_POST["submit"])) {}
     document.location href = 'index.php';
     </script>
     ";
-
   } else {
     echo "
     <script>
@@ -55,23 +54,3 @@ if ( isset ($_POST["submit"])) {}
 <li>
   <button type="Submit"></button>
 //formnya sesuaiin sama tabel ada berapa data, lalu tinggal tambahin required kalau wajib diisi
-
-// yang dibawah ini buat di functions.php yaa sekitar line 18an
-
-function tambah($data){
-  global $conn;
-
-  $id = $data["id"];
-  $nama = $data["nama"];
-  $email = $data["email"];
-  $password = $data["password"];
-
-  $query = "INSERT INTO namadatabase
-      VALUES ('', '$id', '$nama', '$email', '$password')
-      ";
-  mysqli_query($conn, $query);
-
-  return mysqli_affected_rows($conn);  
-  //Kalau gagal ada output -1 , kalau data berhasil di tambah ada output +1 ( return mysqli_affected_rows)
-}
-
