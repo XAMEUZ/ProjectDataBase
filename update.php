@@ -40,6 +40,7 @@ if (isset($_POST["submit"])) {
     <h1>Ubah Data User</h1>
 
     <form action="" method="post">
+        <input type="hidden" name="id" value="<?= $usr["id"]; ?>">
         <ul>
             <li>
                 <label for="ID">ID : </label>
