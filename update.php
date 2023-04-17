@@ -1,6 +1,12 @@
 <?php
 require 'functions.php';
 
+// Ambil data di URL
+$id = $_GET["id"];
+// Query data user berdasarkan id
+$usr = query("SELECT * FROM mahasiswa WHERE id = $id")[0];
+var_dump($usr["name"]);
+
 // cek apakah tombol submit sudah ditekan atau belum 
 if (isset($_POST["submit"])) {
 
@@ -27,35 +33,31 @@ if (isset($_POST["submit"])) {
 <html>
 
 <head>
-    <title>Ubah data mahasiswa</title>
+    <title>Ubah Data User</title>
 </head>
 
 <body>
-    <h1>Ubah data mahasiswa</h1>
+    <h1>Ubah Data User</h1>
 
     <form action="" method="post">
         <ul>
             <li>
-                <label for="nrp">NRP : </label>
-                <input type="text" name="nrp" id="nrp" required>
+                <label for="ID">ID : </label>
+                <input type="text" name="id" id="id" required value="<?= $usr["id"] ?>">
             </li>
             <li>
-                <label for="nama">Nama : </label>
-                <input type="text" name="nama" id="nama">
+                <label for="nama">Name : </label>
+                <input type="text" name="name" id="name" value="<?= $usr["name"] ?>">>
             </li>
             <li>
-                <label for="email">Email :</label>
-                <input type="text" name="email" id="email">
+                <label for="email">User Name :</label>
+                <input type="text" name="username" id="username" value="<?= $usr["username"] ?>">>
             </li>
             <li>
-                <label for="jurusan">Jurusan :</label>
-                <input type="text" name="jurusan" id="jurusan">
+                <label for="jurusan">Password :</label>
+                <input type="text" name="password" id="password" value="<?= $usr["password"] ?>">>
             </li>
             <li>
-                <label for="gambar">Gambar :</label>
-                <input type="text" name="gambar" id="gambar">
-            </li>
-            <li>
-                <button type="submit" name="submit">Ubah Data!</ button>
+                <button type="submit" name="submit">Ubah Data User!</button>
             </li>
         </ul>
