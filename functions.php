@@ -4,30 +4,61 @@ $conn=mysqli_connect("localhost", "root", "root"
 "phpdasar");
 
 function query($query) {
-global $conn;
-$result = mysqli_query($conn, $query);
-$rows = [];
-while( $row = mysqli_fetch_assoc($result) ) { $rows[] = $row;
+    global $conn;
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+    while( $row = mysqli_fetch_assoc($result) ) { 
+        $rows[] = $row;
+    }
+    return $rows;
 }
-I
-return $rows;
-}
+
+
 function tambah ($data) {
-global $conn;
-  
-  function tambah($data){
-  global $conn;
+    global $conn;
 
-  $id = $data["id"];
-  $nama = $data["nama"];
-  $email = $data["email"];
-  $password = $data["password"];
+    $id = $data["id"];
+    $nama = $data["nama"];
+    $email = $data["email"];
+    $password = $data["password"];
 
-  $query = "INSERT INTO namadatabase
-      VALUES ('', '$id', '$nama', '$email', '$password')
-      ";
-  mysqli_query($conn, $query);
 
-  return mysqli_affected_rows($conn);  
-  //Kalau gagal ada output -1 , kalau data berhasil di tambah ada output +1 ( return mysqli_affected_rows)
+    $query = "INSERT INTO mahasiswa
+                VALUES
+                ('', '$hrp', '$nama', '$email', '$jurusan', '$gambar
+                    ')
+                ";
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
 }
+
+
+function hapus ($id) {
+    global $conn;
+    mysqli_query($conn, "DELETE FROM mahasiswa WHERE id 
+    return mysqli_affected_rows($conn);
+}
+
+
+function ubah ($data) {
+    global $conn;
+
+    $id = $data["id"];
+    $nama = htmlspecialchars($data["nama"]); 
+    $email = htmlspecialchars($data["email"]); 
+    $jurusan = htmlspecialchars($data["jurusan"]); 
+    $gambar = htmlspecialchars($data["gambar"]);
+
+    $query = "UPDATE mahasiswa SET
+               nrp = '$nrp',
+               name = '$name',
+               username = '$username',
+               password = '$password'
+               WHERE id = $id
+            ";
+
+    mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+    }
