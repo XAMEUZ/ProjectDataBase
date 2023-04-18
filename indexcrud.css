@@ -1,0 +1,19 @@
+body {
+	background: #d2d2d2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+}
+
+*{
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+h1 {
+	text-align: center;
+	color: black;
+    padding: 20px;
+}
